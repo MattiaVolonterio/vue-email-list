@@ -66,14 +66,8 @@
           Genera Lista Email
         </button>
 
-        <ul class="p-0 mt-4">
-          <li
-            v-for="mail in generatedMailArray"
-            v-show="printList"
-            class="mt-2"
-          >
-            {{mail}}
-          </li>
+        <ul class="p-0 mt-4" v-show="printList">
+          <li v-for="mail in generatedMailArray" class="mt-2">{{mail}}</li>
         </ul>
       </div>
     </div>

@@ -45,6 +45,37 @@
 
   <body>
     <!-- app container declaration -->
-    <div id="app"></div>
+    <div id="app">
+      <div class="container d-flex flex-column align-items-center">
+        <h1 class="my-4">Random Email Generation</h1>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Seleziona il numero di email da generare</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            min="1"
+            max="20"
+            v-model="mailCount"
+          />
+        </div>
+
+        <button @click="fetchMail()" class="btn btn-primary">
+          Genera Lista Email
+        </button>
+
+        <ul class="p-0 mt-4">
+          <li
+            v-for="mail in generatedMailArray"
+            v-show="generatedMailArray.length == mailCount"
+            class="mt-2"
+          >
+            {{mail}}
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

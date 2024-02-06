@@ -8,7 +8,11 @@ createApp({
     };
   },
 
-  computed: {},
+  computed: {
+    printList() {
+      return this.generatedMailArray.length == this.mailCount;
+    },
+  },
 
   methods: {
     fetchMail() {
